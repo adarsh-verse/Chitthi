@@ -44,6 +44,9 @@ export const getAllUsers = async (req, res) => {
         const users = await User.find({
             _id:{$ne:req.userId},
         }).select("-password");
+
+        // const users = usersData.map((data) => data._id)
+
         return res.status(200).json(users);
     }
     catch(e) {

@@ -8,6 +8,6 @@ const user_Router = express.Router()
 
 user_Router.get("/current",isAuth, getCurrentUser)
 user_Router.put("/profile",isAuth , upload.single("image"), editProfile)
-user_Router.get("/getUsers", isAuth , getAllUsers);
+user_Router.get("/getUsers" , getAllUsers);
 
 export default user_Router
