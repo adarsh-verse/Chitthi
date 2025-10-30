@@ -10,10 +10,25 @@ dotenv.config()
 
 const port = process.env.PORT || 5000
 const app = express()
+
+
+
+const allowedOrigins = [
+  "https://chitthi-goje.onrender.com",
+  "https://adarsh-verse.github.io/Chitthi"
+];
+
 app.use(cors({
-    origin:"https://adarsh-verse.github.io/Chitthi",
-    credentials:true
-}))
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
+}));
+
 app.use(express.json()); 
 app.use(cookieParser())
 
