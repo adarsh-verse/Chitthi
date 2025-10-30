@@ -14,7 +14,9 @@ const app = express()
 const allowedOrigins = [
   "https://chitthi-goje.onrender.com",
   "https://adarsh-verse.github.io/Chitthi",
-  "https://adarsh-verse.github.io"
+  "https://adarsh-verse.github.io",
+  "http://localhost:5173/Chitthi",
+  "http://localhost:5173"
 ];
 
 app.use(cors({
