@@ -13,7 +13,8 @@ const app = express()
 
 const allowedOrigins = [
   "https://chitthi-goje.onrender.com",
-  "https://adarsh-verse.github.io/Chitthi"
+  "https://adarsh-verse.github.io/Chitthi",
+  "https://adarsh-verse.github.io"
 ];
 
 app.use(cors({
