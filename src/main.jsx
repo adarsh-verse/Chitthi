@@ -13,7 +13,7 @@ export const serverUrl = "https://chitthi-goje.onrender.com"
 // const persistor = persistStore(store)
 createRoot(document.getElementById('root')).render(
 
- <BrowserRouter>
+ <BrowserRouter basename="/Chitthi/">
  <Provider store={store}>
     {/* <PersistGate loading={null} persistor={persistor}> */}
  <App />
