@@ -53,7 +53,7 @@ const SideChat = ({  activeChat, setActiveChat }) => {
           />
           <div className="flex flex-col leading-tight">
             <h2 className="font-semibold text-[16px] truncate max-w-[150px]">
-              {userData?.name || userName}
+              {userData?.name || userData.userName}
             </h2>
             <span className="text-xs opacity-90">Online</span>
           </div>
@@ -102,14 +102,14 @@ const SideChat = ({  activeChat, setActiveChat }) => {
               <div className="flex-1">
                 <div className="flex justify-between items-center">
                   <h4 className="font-semibold text-gray-800">
-                    {chat.name || chat.userName}
+                    {chat?.name || chat.userName}
                   </h4>
                   <p className="text-xs text-gray-500">
                     {chat.createdAt?.substring(0, 10)}
                   </p>
                 </div>
                 <p className="text-sm text-gray-600 truncate">
-                  {chat.msg || "Tap to start chatting..."}
+                  "Tap to start chatting..."
                 </p>
               </div>
             </div>
