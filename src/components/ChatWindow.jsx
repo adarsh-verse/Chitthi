@@ -17,7 +17,6 @@ const ChatWindow = ({ activeChat, setActiveChat }) => {
 
   // Fetch messages for the active chat
   const { messages, loading } = useMessages(activeChat?._id);
-  console.log(messages);
 
   const [showPicker, setShowPicker] = useState(false);
   const [message, setMessage] = useState("");

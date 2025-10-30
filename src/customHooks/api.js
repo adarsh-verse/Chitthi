@@ -5,7 +5,6 @@ export async function getAllUsers() {
     try {
         let result = await axios.get(`${serverUrl}/api/user/getUsers`
             , { withCredentials: true });
-        // console.log(result.data);
         return result.data;
     }
     catch (e) {

@@ -5,17 +5,13 @@ import { FiLogOut } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { serverUrl } from "../main";
-import { getAllUsers } from "../customHooks/api";
 import { setOtherUserData, setUserData } from "../redux/UserSlice";
 import { useNavigate } from "react-router-dom";
-
-async function getUsers() {
-  return await getAllUsers();
-}
 
 
 const SideChat = ({  activeChat, setActiveChat }) => {
   const { userData, otherUserData } = useSelector((state) => state.user);
+  // console.log(userData, otherUserData);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -85,7 +81,7 @@ const SideChat = ({  activeChat, setActiveChat }) => {
      
       <div className="flex-1 overflow-y-auto bg-white">
         {otherUserData?.length > 0 ? (
-          otherUserData.map((chat) => (
+          otherUserData.filter((chat) => chat._id !== userData._id).map((chat) => (
             <div
               key={chat._id}
               className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 cursor-pointer transition-all border-b border-gray-100"
