@@ -11,7 +11,7 @@ dotenv.config()
 const port = process.env.PORT || 5000
 const app = express()
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://adarsh-verse.github.io/Chitthi/",
     credentials:true
 }))
 app.use(express.json()); 
