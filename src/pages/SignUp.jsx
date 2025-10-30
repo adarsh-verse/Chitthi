@@ -41,6 +41,7 @@ function SignUp() {
             }, { withCredentials: true })
 
             dispatch(setUserData(result.data))
+            navigate("/profile")
 
             if (result.status === 201) {
                 setMessage("Signup successful! Redirecting to login...")

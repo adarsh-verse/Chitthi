@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { serverUrl } from '../main';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUserData, setLoginState } from '../redux/UserSlice';
+import { setUserData} from '../redux/UserSlice';
 
 let loginToken = null;
 
@@ -25,8 +25,8 @@ let navigate = useNavigate()
             }, { withCredentials: true })
             
             
-            dispatch(setUserData(result.data))
-            dispatch(setLoginState(true))
+            await dispatch(setUserData(result.data.user));
+            navigate("/")
             
             setEmail("")
             setPassword("")
